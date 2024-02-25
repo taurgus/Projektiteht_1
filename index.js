@@ -22,6 +22,10 @@ app.get('/ajaxmessage', (req, res) => {
   res.send('Handle AJAX request for messages');
 });
 
+app.get('*', function (req, res) {
+  res.send('Cant find the requested page', 404);
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
