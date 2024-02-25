@@ -2,9 +2,9 @@ const express = require('express');
 const app = express();
 const port = 3005;
 
-// Route: /
+// Route: / 
 app.get('/', (req, res) => {
-  res.send('Questbookki');
+  res.sendFile(__dirname + '/index.html');
 });
 
 // Route: /guestbook
