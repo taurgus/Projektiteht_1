@@ -11,7 +11,6 @@ app.get('/', (req, res) => {
 //Parsitaan .json tiedosto tauluksi
 app.get('/guestbook', function (req, res) {
   var data = require(__dirname + '/data/data.json');
-
   var results = '<table border="1"> ';
 
   //Loopin kasvatus
@@ -30,7 +29,6 @@ app.get('/guestbook', function (req, res) {
 // Uuden viestin reitti
 app.get('/message', function (req, res) {
   res.sendFile(__dirname + '/message.html');
-
 })
 
 app.post('/message', function (req, res) {
@@ -41,8 +39,6 @@ app.post('/message', function (req, res) {
   const username = req.body.username
   const country = req.body.country
   const message = req.body.message;
-
-
 
   //Työnnetään viimeisin tieto .json listaan
   data.push({
@@ -62,15 +58,11 @@ app.post('/message', function (req, res) {
   res.send("Saved the data to a file.");
 });
 
-
-
-
-
 //Virheilmoitus jos sivua ei löydy
 app.get('*', function (req, res) {
   res.send('Sivua ei löydy', 404);
 });
-//Kuunnellaan porttia 3005
+//Servu toimii portilla 3005
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
