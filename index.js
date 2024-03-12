@@ -37,19 +37,18 @@ app.post('/message', function (req, res) {
   // Load the existing data from a file and assign to an array (lista)
   const data = require(__dirname + '/data/data.json');
 
-  //luodaan uusi henkilö...
+  //Uusi tieto
   const username = req.body.username
   const country = req.body.country
   const message = req.body.message;
 
 
 
-
+  //Työnnetään viimeisin tieto .json listaan
   data.push({
       "username": username,
       "country": country,
       "message": message
-
   });
 
   // Convert the JSON object to a string format 
