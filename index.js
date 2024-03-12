@@ -13,7 +13,7 @@ app.get('/guestbook', function (req, res) {
   var data = require(__dirname + '/data/data.json');
   var results = '<table border="1"> ';
 
-  //Loopin kasvatus
+  //Loopin kasvatus ja luodaan table
   for (var i = 0; i < data.length; i++) {
       results +=
           '<tr>' +
